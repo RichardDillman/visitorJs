@@ -1,7 +1,7 @@
 /*Adds classes to the body to signify the users freshness on the site be it new, first time today, or returning after months   */
 /*global alert, document, visitor, window, keys*/
 var visitor = visitor || {};
-  
+	
 /*sets some variables*/
 visitor.lastVisit = false;
 visitor.classPrefix = 'visitor-';
@@ -52,11 +52,11 @@ visitor.getVisit = function (name) {
 	visitor.readCookie(name);
 };
 
-/*compairs the last visit to the current visit and appens the appropriate class name to body*/
+/*decide what kind of visitor we have*/
 visitor.compairVisit = function () {
 	"use strict";
 	var visit = visitor.getVisit('lastVisit'),
-		diff = Math.floor((+visit - new Date().getTime()) / 1000),
+		diff = Math.floor((+visit - new Date().getTime())),
 		i = Object.keys(visitor.tests).length,
 		k,
 		v;
